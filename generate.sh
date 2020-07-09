@@ -8,7 +8,9 @@ do
   echo " ================ Compiling LWJGL version $version. ================ "
   echo " "
   cd lwjgl
+  git reset --hard
   git checkout $version
+  git status
   echo "Using aarch64 version of JAWT"
   #Replace i386 with aarch64 in platform_build/linux_ant/build.xml
   sed -i 's/i386/aarch64/g' platform_build/linux_ant/build.xml
