@@ -1,2 +1,2 @@
-# gen-lwjgl2
-Builds all versions of LWJGL2 needed for minecraft
+# lwjgl-builder
+Builds and packages Aarch64 LWJGL natives.
