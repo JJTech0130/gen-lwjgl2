@@ -1,6 +1,9 @@
 #!/bin/bash
-
+# Make sure you install libxcursor-dev, libxxf86vm-dev, and libxrandr-dev
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 #Replace with java home, MUST BE OPENJDK 8
+
+# Clean up old builds
+rm ./lwjgl2* -r
 
 git clone https://github.com/LWJGL/lwjgl.git
 
