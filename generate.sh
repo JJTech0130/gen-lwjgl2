@@ -1,5 +1,6 @@
 #!/bin/bash
 # Make sure you install libxcursor-dev, libxxf86vm-dev, and libxrandr-dev
+
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 #Replace with java home, MUST BE OPENJDK 8
 
 # Clean up old builds
@@ -25,7 +26,7 @@ do
   env PATH=${JAVA_HOME}/bin:${PATH} ant
   cd ..
   mkdir $version
-  cp lwjgl/libs/linux/* $version
+  cp lwjgl/libs/linux/* $version -r
 done
 #Move latest nightly to correct folder
 mv ./master ./lwjgl2.9.4-nightly
