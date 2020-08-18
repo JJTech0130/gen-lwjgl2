@@ -9,5 +9,6 @@ do
   echo " "
   cd $lwjgldir
   jar -cf ./lwjgl-platform-$version-natives-linux.jar ./liblwjgl.so ./libopenal.so
+  jar -cf ./lwjgl-$version.jar ./org
   cd ..
 done

@@ -10,6 +10,7 @@ git clone https://github.com/LWJGL/lwjgl.git
 
 #versions=('master' 'lwjgl2.9.3' 'lwjgl2.9.2' 'lwjgl2.9.1' 'lwjgl2.9.0') #Version 2.9.1 and 2.9.0 won't compile
 versions=('master' 'lwjgl2.9.3' 'lwjgl2.9.2') #Versions to compile, correspond to branch/tag names
+#versions=('master')
 
 for version in "${versions[@]}"
 do
@@ -25,8 +26,9 @@ do
   echo "Staring ANT with modified path"
   env PATH=${JAVA_HOME}/bin:${PATH} ant
   cd ..
-  mkdir $version
+  mkdir $version/org -p
   cp lwjgl/libs/linux/* $version -r
+  cp lwjgl/bin/org/* $version/org -r
 done
 #Move latest nightly to correct folder
 mv ./master ./lwjgl2.9.4-nightly
