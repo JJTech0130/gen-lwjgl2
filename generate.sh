@@ -6,11 +6,11 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 #Replace with java home, MUST
 # Clean up old builds
 rm ./lwjgl2* -r
 
-git clone https://github.com/LWJGL/lwjgl.git
+git clone https://github.com/JJTech0130/lwjgl.git
 
 #versions=('master' 'lwjgl2.9.3' 'lwjgl2.9.2' 'lwjgl2.9.1' 'lwjgl2.9.0') #Version 2.9.1 and 2.9.0 won't compile
-versions=('master' 'lwjgl2.9.3' 'lwjgl2.9.2') #Versions to compile, correspond to branch/tag names
-#versions=('master')
+#versions=('master' 'lwjgl2.9.3' 'lwjgl2.9.2') #Versions to compile, correspond to branch/tag names
+versions=('lwjgl2.9.4-nightly-20150209' 'lwjgl2.9.2-nightly-20140822' 'lwjgl2.9.3')
 
 for version in "${versions[@]}"
 do
@@ -27,8 +27,6 @@ do
   env PATH=${JAVA_HOME}/bin:${PATH} ant
   cd ..
   mkdir $version/org -p
-  cp lwjgl/libs/linux/* $version -r
+  cp lwjgl/bin/lwjgl/* $version
   cp lwjgl/bin/org/* $version/org -r
 done
-#Move latest nightly to correct folder
-mv ./master ./lwjgl2.9.4-nightly
